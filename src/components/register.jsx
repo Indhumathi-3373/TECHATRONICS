@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-export default function Navbar(){
-    return (
-        <>
-        
-        </>
-    );
-}
-=======
 import React, { useState } from "react";
 import "./Register.css";
 
@@ -59,4 +50,3 @@ const Register = () => {
 };
 
 export default Register;
->>>>>>> 0ed897a6025ff582e2a845fb1110052308665101
