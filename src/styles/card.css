@@ -1,0 +1,31 @@
+*{
+    overflow:hidden;
+     margin:0;
+}
+#card{
+    border: 2px solid grey;
+    border-radius: 3%;
+    width:15%;
+    height:30%;
+}
+#arduino{
+    height:50%;
+    width:50%;
+    padding-left:21%;
+}
+#cart{
+    background-color: yellow;
+    outline: none;
+    border: yellow;
+    border-radius: 3%;
+}
+#wish{
+    border: none;
+    background-color: none;
+}
+#button{
+display:flex;
+justify-content: space-between;
+padding:5%;
+
+}

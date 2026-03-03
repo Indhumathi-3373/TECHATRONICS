@@ -1,16 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+<<<<<<< HEAD
+import Card from './components/card'
+=======
 import Navbar from './components/navbar'
 import Register from './components/register'
+>>>>>>> 0ed897a6025ff582e2a845fb1110052308665101
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    
+     <Register />;
+
     </>
   )
 }
