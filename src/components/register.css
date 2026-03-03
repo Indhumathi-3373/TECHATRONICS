@@ -9,7 +9,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Card */
 .card {
   width: 320px;
   padding: 30px;
@@ -19,12 +18,10 @@
   text-align: center;
 }
 
-/* Heading */
 .card h2 {
   margin-bottom: 20px;
 }
 
-/* Inputs */
 input {
   width: 100%;
   padding: 10px;
