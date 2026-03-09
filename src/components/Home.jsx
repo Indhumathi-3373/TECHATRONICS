@@ -47,8 +47,8 @@ export default function Home() {
                   <ShoppingCart size={20}></ShoppingCart>
                 </a>
               </li><li>
-                <a className="nav-sign" href="/login">
-                  Sign In
+                <a className="nav-sign" href="/register">
+                  Sign Up
                 </a>
               </li>
             </ul>

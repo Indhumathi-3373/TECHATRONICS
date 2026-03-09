@@ -9,7 +9,6 @@ const Register = () => {
     e.preventDefault();
     alert("Registered Successfully!");
   };
-
   return (
     <div className="register-page">
       <header className="register-topbar">
