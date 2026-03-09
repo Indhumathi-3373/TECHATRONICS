@@ -1,12 +1,33 @@
 import React, { useState } from "react";
+import { postJson } from "../lib/api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Data:", { email, password });
+    setErrorMessage("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await postJson("/api/auth/login", { email, password });
+      localStorage.setItem("authToken", response.token);
+      localStorage.setItem(
+        "authUser",
+        JSON.stringify({
+          id: response.userId,
+          email: response.email,
+        })
+      );
+      window.location.href = "/";
+    } catch (error) {
+      setErrorMessage(error.message || "Login failed.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -37,8 +58,14 @@ const Login = () => {
               />
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Logging in..." : "Login"}
+            </button>
           </form>
+
+          {errorMessage && (
+            <p style={{ color: "#ff8f8f", marginTop: "12px", fontSize: "14px" }}>{errorMessage}</p>
+          )}
 
           <div className="links">
             <a href="#">Forgot Password?</a>

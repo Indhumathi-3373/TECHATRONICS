@@ -1,0 +1,54 @@
+HELP.md
+
+# Build output
+target/
+build/
+out/
+*.class
+
+# Local Maven caches created during local runs
+.m2/
+.mvn-home/
+
+# Maven wrapper binary
+.mvn/wrapper/maven-wrapper.jar
+
+# Logs / crash dumps
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
