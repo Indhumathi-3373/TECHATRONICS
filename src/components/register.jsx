@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.css";
+import "../styles/register.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -11,40 +11,53 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <div className="card">
-        <h2>Create Account</h2>
+    <div className="register-page">
+      <header className="register-topbar">
+        <a className="register-brand" href="home.jsx">
+          TECHATRONICS
+        </a>
+        <a className="register-nav-link" href="login.jsx">
+          Sign In
+        </a>
+      </header>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Enter Email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      <main className="register-main">
+        <div className="register-card">
+          <p className="register-kicker">SMART ELECTRONICS STORE</p>
+          <h2>Create Account</h2>
+          <p className="register-subtitle">Join TECHATRONICS and start building faster.</p>
 
-          <input
-            type="password"
-            placeholder="Enter Password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Enter Email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <div className="forgot">
-            <a href="#">Forgot Password?</a>
-          </div>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-          <button type="submit" className="register-btn">
-            Register
-          </button>
-        </form>
+            <div className="forgot">
+              <a href="#">Forgot Password?</a>
+            </div>
 
-        <p className="signin">
-          Already have an account? <a href="#">Sign In</a>
-        </p>
-      </div>
+            <button type="submit" className="register-btn">
+              Register
+            </button>
+          </form>
+
+          <p className="signin">
+            Already have an account? <a href="login.jsx">Sign In</a>
+          </p>
+        </div>
+      </main>
     </div>
   );
 };

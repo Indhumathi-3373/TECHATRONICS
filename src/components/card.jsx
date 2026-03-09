@@ -71,7 +71,7 @@ return(
 
             <button
               className={`add-btn ${added ? "added" : ""}`}
-            //   onClick={handleAddCart}
+              onClick={() => setAdded(true)}
             >
               <ShoppingCart size={14} />
               <span>{added ? "Added!" : "Add to Cart"}</span>
