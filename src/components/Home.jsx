@@ -7,14 +7,14 @@ export default function Home() {
     <>
       <div className="home-page">
         <header className="topbar">
-          <a className="brand" href="Home.jsx">
+          <a className="brand" href="/">
             TECHATRONICS
           </a>
 
           <nav>
             <ul className="menu">
               <li>
-                <a className="active" href="home.jsx">
+                <a className="active" href="/">
                   Home
                 </a>
               </li>
@@ -47,7 +47,7 @@ export default function Home() {
                   <ShoppingCart size={20}></ShoppingCart>
                 </a>
               </li><li>
-                <a className="nav-sign" href="login.jsx">
+                <a className="nav-sign" href="/login">
                   Sign In
                 </a>
               </li>

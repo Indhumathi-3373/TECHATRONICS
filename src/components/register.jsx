@@ -13,10 +13,10 @@ const Register = () => {
   return (
     <div className="register-page">
       <header className="register-topbar">
-        <a className="register-brand" href="home.jsx">
+        <a className="register-brand" href="/">
           TECHATRONICS
         </a>
-        <a className="register-nav-link" href="login.jsx">
+        <a className="register-nav-link" href="/login">
           Sign In
         </a>
       </header>
@@ -54,7 +54,7 @@ const Register = () => {
           </form>
 
           <p className="signin">
-            Already have an account? <a href="login.jsx">Sign In</a>
+            Already have an account? <a href="/login">Sign In</a>
           </p>
         </div>
       </main>
