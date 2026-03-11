@@ -1,14 +1,35 @@
 import React, { useState } from "react";
 import "../styles/register.css";
+import { postJson } from "../lib/api";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Registered Successfully!");
+    setErrorMessage("");
+    setSuccessMessage("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await postJson("/api/auth/register", { email, password });
+      setSuccessMessage(response?.message || "Registered successfully.");
+      setEmail("");
+      setPassword("");
+      setTimeout(() => {
+        window.location.href = "/login";
+      }, 1000);
+    } catch (error) {
+      setErrorMessage(error.message || "Registration failed.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   return (
     <div className="register-page">
       <header className="register-topbar">
@@ -47,10 +68,17 @@ const Register = () => {
               <a href="#">Forgot Password?</a>
             </div>
 
-            <button type="submit" className="register-btn">
-              Register
+            <button type="submit" className="register-btn" disabled={isSubmitting}>
+              {isSubmitting ? "Registering..." : "Register"}
             </button>
           </form>
+
+          {errorMessage && (
+            <p style={{ color: "#ffcccc", marginTop: "10px", fontSize: "14px" }}>{errorMessage}</p>
+          )}
+          {successMessage && (
+            <p style={{ color: "#9ff4ba", marginTop: "10px", fontSize: "14px" }}>{successMessage}</p>
+          )}
 
           <p className="signin">
             Already have an account? <a href="/login">Sign In</a>

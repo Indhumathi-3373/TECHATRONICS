@@ -1,13 +1,36 @@
 import React, { useState } from "react";
+
 import "../styles/login.css";
+import { postJson } from "../lib/api";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Data:", { email, password });
+    setErrorMessage("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await postJson("/api/auth/login", { email, password });
+      localStorage.setItem("authToken", response.token);
+      localStorage.setItem(
+        "authUser",
+        JSON.stringify({
+          id: response.userId,
+          email: response.email,
+        })
+      );
+      window.location.href = "/";
+    } catch (error) {
+      setErrorMessage(error.message || "Login failed.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,6 +71,7 @@ const Login = () => {
               <a href="#">Forgot Password?</a>
             </div>
 
+
             <button type="submit" className="login-btn">
               Sign In
             </button>
@@ -56,6 +80,7 @@ const Login = () => {
           <p className="login-signup">
             New user? <a href="/register">Create Account</a>
           </p>
+
         </div>
       </main>
     </div>
