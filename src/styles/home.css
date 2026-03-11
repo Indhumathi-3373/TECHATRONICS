@@ -56,7 +56,7 @@
   transition: 0.35s ease;
 }
 
-.menu a.active,
+
 .menu a:hover {
   background: cyan;
   color: black;
