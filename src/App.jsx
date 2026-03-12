@@ -18,7 +18,8 @@ if(path==='/card'){
   return <Card/>
 }
   return (
-    <Home />
+    <Home/>
+   
   )
 }
 
