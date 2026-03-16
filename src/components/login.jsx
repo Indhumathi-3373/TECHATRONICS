@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/login.css";
 import { postJson } from "../lib/api";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -87,6 +88,8 @@ const Login = () => {
             <a href="/register">Create Account</a>
           </div>
         </div>
+      </main>
+    </div>
       </main>
     </div>
   );

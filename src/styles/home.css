@@ -93,7 +93,7 @@ body {
   box-shadow: 0 0 8px #00ffff;
 }
 
-.menu a.active,
+
 .menu a:hover {
   color: #ffffff;
 }
