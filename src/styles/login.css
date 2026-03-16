@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
-.register-page {
+.login-page {
   min-height: 100vh;
   color: #eaf6f6;
   background: radial-gradient(circle at 15% 20%, rgba(0, 255, 255, 0.08) 0%, transparent 45%),
@@ -8,7 +8,7 @@
   font-family: 'Outfit', sans-serif;
 }
 
-.register-topbar {
+.login-topbar {
   position: sticky;
   top: 0;
   z-index: 50;
@@ -22,7 +22,7 @@
   border-bottom: 1px solid rgba(0, 255, 255, 0.1);
 }
 
-.register-brand {
+.login-brand {
   font-size: 1.5rem;
   letter-spacing: 0.08em;
   font-weight: 800;
@@ -31,7 +31,7 @@
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
 
-.register-nav-link {
+.login-nav-link {
   display: inline-block;
   padding: 0.7rem 1.5rem;
   border-radius: 12px;
@@ -43,14 +43,14 @@
   font-weight: 600;
 }
 
-.register-nav-link:hover {
+.login-nav-link:hover {
   background: rgba(0, 255, 255, 0.1);
   border-color: #00ffff;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
 }
 
-.register-main {
+.login-main {
   min-height: calc(100vh - 88px);
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@
   padding: 4rem 5vw;
 }
 
-.register-card {
+.login-card {
   width: min(92vw, 480px);
   padding: 3.5rem;
   border-radius: 24px;
@@ -66,12 +66,12 @@
   background: rgba(13, 17, 23, 0.7);
   backdrop-filter: blur(30px);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  animation: registerFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: loginFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
   position: relative;
   overflow: hidden;
 }
 
-.register-card::before {
+.login-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -82,7 +82,7 @@
   opacity: 0.8;
 }
 
-.register-kicker {
+.login-kicker {
   color: #00ffff;
   font-family: 'Space Mono', monospace;
   font-size: 0.85rem;
@@ -93,7 +93,7 @@
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
 }
 
-.register-card h2 {
+.login-card h2 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -101,7 +101,7 @@
   color: #ffffff;
 }
 
-.register-subtitle {
+.login-subtitle {
   color: #a0aec0;
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
@@ -109,10 +109,21 @@
   font-weight: 300;
 }
 
-.register-card input {
+.login-card .input-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-card .input-group label {
+  display: block;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+
+.login-card input {
   width: 100%;
   padding: 1.2rem;
-  margin: 0.6rem 0;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
@@ -122,40 +133,20 @@
   transition: all 0.3s ease;
 }
 
-.register-card input::placeholder {
+.login-card input::placeholder {
   color: #64748b;
 }
 
-.register-card input:focus {
+.login-card input:focus {
   outline: none;
   border-color: #00ffff;
   background: rgba(0, 255, 255, 0.05);
   box-shadow: 0 0 0 4px rgba(0, 255, 255, 0.1), inset 0 0 10px rgba(0, 255, 255, 0.05);
 }
 
-.forgot {
-  margin-top: 0.5rem;
-  text-align: right;
-  font-size: 0.9rem;
-}
-
-.forgot a,
-.signin a {
-  text-decoration: none;
-  color: #00ffff;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.forgot a:hover,
-.signin a:hover {
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-  text-decoration: underline;
-}
-
-.register-btn {
+.login-btn {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 1.2rem;
   border-radius: 12px;
   border: none;
@@ -170,25 +161,37 @@
   box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
 }
 
-.register-btn:hover {
+.login-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 255, 255, 0.5);
 }
 
-.register-btn:disabled {
+.login-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
 }
 
-.signin {
+.login-links {
   margin-top: 2rem;
-  text-align: center;
-  font-size: 1rem;
-  color: #a0aec0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
 }
 
-@keyframes registerFadeUp {
+.login-links a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-links a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  text-decoration: underline;
+}
+
+@keyframes loginFadeUp {
   from {
     opacity: 0;
     transform: translateY(40px);

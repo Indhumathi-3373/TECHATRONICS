@@ -1,59 +1,13 @@
 import "../styles/home.css";
-import { Heart, ShoppingCart, Search } from "lucide-react";
+import Navbar from "./Navbar";
 import arduinoImg from "../assets/Arduino_Uno_-_R3-transparent.png";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <>
       <div className="home-page">
-        <header className="topbar">
-          <a className="brand" href="/">
-            TECHATRONICS
-          </a>
-
-          <nav>
-            <ul className="menu">
-              <li>
-                <a className="active" href="/">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="offers.jsx">Offers</a>
-              </li>
-              <li>
-                <a href="about.jsx">About us</a>
-              </li>
-              <li>
-                <a href="contact.jsx">Contact</a>
-              </li>
-              
-            </ul>
-          </nav>
-          <nav>
-            <ul className="centermenu">
-              <li>
-                <a className="search">
-                  <Search size={20}></Search>
-                </a>
-              </li>
-              <li>
-                <a href="wishlist.jsx">
-                  <Heart size={20}></Heart>
-                </a>
-              </li>
-              <li>
-                <a href="order.jsx">
-                  <ShoppingCart size={20}></ShoppingCart>
-                </a>
-              </li><li>
-                <a className="nav-sign" href="/register">
-                  Sign Up
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Navbar />
         <main>
           <section className="body">
             <div className="left-half">
@@ -66,12 +20,12 @@ export default function Home() {
                   builder, find reliable components and start creating faster.
                 </p>
                 <div className="hero-actions">
-                  <a className="explore-btn" href="offers.jsx">
+                  <Link className="explore-btn" to="/offers">
                     Explore Now
-                  </a>
-                  <a className="ghost-btn" href="about.jsx">
+                  </Link>
+                  <Link className="ghost-btn" to="/about">
                     Learn More
-                  </a>
+                  </Link>
                 </div>
                 <div className="hero-tags">
                   <span>Arduino</span>
@@ -81,9 +35,9 @@ export default function Home() {
               </div>
             </div>
             <div className="right-half">
-              <div className="arduino-wrap">
+              {/* <div className="arduino-wrap"> */}
                 <img src={arduinoImg} alt="Arduino Uno R3" className="arduino-image" />
-              </div>
+              {/* </div> */}
             </div>
           </section>
         </main>

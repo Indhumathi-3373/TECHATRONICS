@@ -1,0 +1,115 @@
+.offers-main {
+  padding: 2rem 5vw 4rem;
+}
+
+.offers-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.offers-hero h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  margin-bottom: 0.6rem;
+}
+
+.offers-subtitle {
+  color: #d7ebeb;
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Controls */
+.offers-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.9s ease both;
+}
+
+.search-box input {
+  width: min(90vw, 420px);
+  padding: 0.78rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(170, 234, 234, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+  color: #eaf6f6;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-box input::placeholder {
+  color: rgba(226, 243, 243, 0.55);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: cyan;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.12);
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+}
+
+.cat-btn {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(170, 234, 234, 0.3);
+  background: transparent;
+  color: #d7ebeb;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
+}
+
+.cat-btn:hover {
+  border-color: cyan;
+  color: cyan;
+}
+
+.cat-btn.active {
+  background: cyan;
+  color: #050809;
+  border-color: cyan;
+  font-weight: 600;
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  animation: fadeUp 1s ease both;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #a0b8b8;
+  font-size: 1.1rem;
+  padding: 3rem 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 680px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

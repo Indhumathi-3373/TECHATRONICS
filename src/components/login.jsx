@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/login.css";
 import { postJson } from "../lib/api";
 
 const Login = () => {
@@ -31,17 +32,28 @@ const Login = () => {
   };
 
   return (
-    <>
-      <div className="container">
-        <div className="card">
-          <h2>TECHATRONICS</h2>
-          <p>Login to continue shopping</p>
+    <div className="login-page">
+      <header className="login-topbar">
+        <a className="login-brand" href="/">
+          TECHATRONICS
+        </a>
+        <a className="login-nav-link" href="/register">
+          Sign Up
+        </a>
+      </header>
+
+      <main className="login-main">
+        <div className="login-card">
+          <p className="login-kicker">SMART ELECTRONICS STORE</p>
+          <h2>Welcome Back</h2>
+          <p className="login-subtitle">Login to continue shopping.</p>
 
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label>Email Address</label>
               <input
                 type="email"
+                placeholder="Enter your email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -52,28 +64,31 @@ const Login = () => {
               <label>Password</label>
               <input
                 type="password"
+                placeholder="Enter your password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
-            <button type="submit" disabled={isSubmitting}>
+            <button type="submit" className="login-btn" disabled={isSubmitting}>
               {isSubmitting ? "Logging in..." : "Login"}
             </button>
           </form>
 
           {errorMessage && (
-            <p style={{ color: "#ff8f8f", marginTop: "12px", fontSize: "14px" }}>{errorMessage}</p>
+            <p style={{ color: "#ffcccc", marginTop: "10px", fontSize: "14px" }}>
+              {errorMessage}
+            </p>
           )}
 
-          <div className="links">
+          <div className="login-links">
             <a href="#">Forgot Password?</a>
             <a href="/register">Create Account</a>
           </div>
         </div>
-      </div>
-    </>
+      </main>
+    </div>
   );
 };
 
