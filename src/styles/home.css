@@ -144,6 +144,15 @@ body {
   transform: translateY(-2px) !important;
 }
 
+.nav-icon {
+  color: #00ffff !important;
+  stroke-width: 2px !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: block;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
+}
+
 /* Hero Section */
 .body {
   min-height: calc(100vh - 88px);

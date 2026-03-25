@@ -90,8 +90,6 @@ const Login = () => {
         </div>
       </main>
     </div>
-      </main>
-    </div>
   );
 };
 

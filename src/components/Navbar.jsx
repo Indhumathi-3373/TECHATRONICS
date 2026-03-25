@@ -46,17 +46,17 @@ export default function Navbar() {
         <ul className="centermenu">
           <li>
             <Link className="search" to="/offers">
-              <Search size={20} />
+              <Search size={20} className="nav-icon" />
             </Link>
           </li>
           <li>
             <Link to="/wishlist">
-              <Heart size={20} />
+              <Heart size={20} className="nav-icon" />
             </Link>
           </li>
           <li>
             <Link to="/cart">
-              <ShoppingCart size={20} />
+              <ShoppingCart size={20} className="nav-icon" />
             </Link>
           </li>
           <li>
