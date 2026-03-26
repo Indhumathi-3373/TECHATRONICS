@@ -1,14 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
-import { Heart, ShoppingCart, Search } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Heart, ShoppingCart, Search, LogOut, User } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
   const location = useLocation();
-  const isLoggedIn = !!localStorage.getItem("authToken");
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("authUser");
-    window.location.href = "/";
+    logout();
+    navigate("/login", { replace: true });
   };
 
   return (
@@ -60,13 +61,20 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            {isLoggedIn ? (
-              <button className="nav-sign" onClick={handleLogout}>
-                Logout
-              </button>
+            {isAuthenticated ? (
+              <div className="nav-user-group">
+                <span className="nav-user-name" title={user?.email}>
+                  <User size={16} />
+                  {user?.email?.split("@")[0]}
+                </span>
+                <button className="nav-sign nav-logout-btn" onClick={handleLogout}>
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </div>
             ) : (
-              <Link className="nav-sign" to="/register">
-                Sign Up
+              <Link className="nav-sign" to="/login">
+                Sign In
               </Link>
             )}
           </li>

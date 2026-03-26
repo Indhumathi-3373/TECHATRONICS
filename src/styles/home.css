@@ -153,6 +153,47 @@ body {
   filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
 }
 
+/* User Group in Navbar */
+.nav-user-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.nav-user-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00ffff;
+  background: rgba(0, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-logout-btn {
+  gap: 5px;
+  font-size: 0.85rem !important;
+  padding: 0.5rem 1rem !important;
+  border-color: rgba(255, 100, 100, 0.3) !important;
+  color: #ff9a9a !important;
+  transition: all 0.3s ease;
+}
+
+.nav-logout-btn:hover {
+  background: rgba(255, 80, 80, 0.12) !important;
+  border-color: rgba(255, 80, 80, 0.5) !important;
+  color: #ff6b6b !important;
+  box-shadow: 0 0 15px rgba(255, 80, 80, 0.15) !important;
+}
+
 /* Hero Section */
 .body {
   min-height: calc(100vh - 88px);
